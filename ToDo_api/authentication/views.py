@@ -16,6 +16,8 @@ class AuthUserAPIView(GenericAPIView):
 
 class RegisterAPIView(GenericAPIView):
 
+    authentication_classes = []
+
     serializer_class = RegisterSerializer
 
     def post(self, request):
@@ -27,6 +29,8 @@ class RegisterAPIView(GenericAPIView):
         return response.Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
 
 class LoginAPIView(GenericAPIView):
+
+    authentication_classes = []
 
     serializer_class = LoginSerializer
 
